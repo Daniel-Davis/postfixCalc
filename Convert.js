@@ -2,32 +2,33 @@
 
 function convert(Input) {
   
+  var output = new Stack();
   var operands = new Stack();
   var operators = new Stack();
   
-  while (i = 0; i <= Stack.length(); i++) { // goes through stack length
+  while (i = 0; i <= Input.length(); i++) { // goes through stack length
   
-    if ( Input == 1 || Input == 2 || Input == 3 || Input == 4 || Input == 5 || Input == 6 || Input == 7 || Input == 8 || Input == 9 || Input == 0) { // if a number
+    if ( Input[i] == 1 || Input[i] == 2 || Input[i] == 3 || Input[i] == 4 || Input[i] == 5 || Input[i] == 6 || Input[i] == 7 || Input[i] == 8 || Input[i] == 9 || Input[i] == 0) { // if a number
       operands.push(Input); // pushes input into the operands stack
       console.log('Input has been pushed to operands stack'); // lets me know job is done
     }// end of if
     
-    else if (Input == '' || Input == "" || Input == '.') { // if a spacial character 
-      Stack.splice(Input); // delete that character
+    else if (Input[i] == '' || Input[i] == "" || Input[i] == '.') { // if a spacial character 
+      Stack.splice(Input[i]); // delete that character
       console.log('Input has be spliced'); // let me know job is done
     }// end of else if
     
-    else if (Input == '+' || Input == '-' || Input == '*' || Input == '/') { // if character is an operator
-      operators.push(Input); // push it onto operators stack
+    else if (Input[i] == '+' || Input[i] == '-' || Input[i] == '*' || Input[i] == '/') { // if character is an operator
+      operators.push(Input[i]); // push it onto operators stack
       console.log('Input has been pushed to operators'); // job is done
     }// end of else if
     
-    else if (Input == '(') { // if the beginning of a private calculation
+    else if (Input[i] == '(') { // if the beginning of a private calculation
       convert(); // start up converting that section
       console.log('Starting private calc'); // job is going
     }// end of else if
     
-    else if(Input == ')') { // if the end of a private calc
+    else if(Input[i] == ')') { // if the end of a private calc
       continue; // break from recursion and continue conversion
       console.log('end of private clac'); // job is done
     }// end of else if
@@ -40,5 +41,15 @@ function convert(Input) {
   
   operands.forEach(console.log(currentValue));
   operators.forEach(console.log(currentValue));
+  
+  for (var i=0, i<=operators.length, i++) { // pushes all operators onto output stack
+    output.push(operators[i]);
+  }// end of for loop
+  
+  for (var i=0, i<=operands.length, i++) { // pushes all operands onto output stack
+    output.push(operands[i]);
+  }// end of for loop
+  
+  return output; // returns output stack
   
 }// end of function
