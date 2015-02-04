@@ -38,7 +38,7 @@ function convert(Input) {
     
   }// end of while loop
   
-  operands.foreach(console.log(element));
-  operators.foreach(console.log(element));
+  operands.forEach(console.log(currentValue));
+  operators.forEach(console.log(currentValue));
   
 }// end of function
