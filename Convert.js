@@ -13,22 +13,19 @@ function convert(Input) {
       console.log('Input has been pushed to operands stack'); // lets me know job is done
     }// end of if
     
-    else if (Input[i] == '' || Input[i] == "" || Input[i] == '.') { // if a spacial character 
-      Stack.splice(Input[i]); // delete that character
-      console.log('Input has be spliced'); // let me know job is done
-    }// end of else if
-    
     else if (Input[i] == '+' || Input[i] == '-' || Input[i] == '*' || Input[i] == '/') { // if character is an operator
       operators.push(Input[i]); // push it onto operators stack
       console.log('Input has been pushed to operators'); // job is done
     }// end of else if
     
     else if (Input[i] == '(') { // if the beginning of a private calculation
+      Input.Splice(i,1); // deletes un needed '('
       convert(); // start up converting that section
       console.log('Starting private calc'); // job is going
     }// end of else if
     
     else if(Input[i] == ')') { // if the end of a private calc
+      Input.Splice(i,1); // delete un needed ')'
       continue; // break from recursion and continue conversion
       console.log('end of private clac'); // job is done
     }// end of else if
