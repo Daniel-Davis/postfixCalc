@@ -6,7 +6,7 @@ function convert(Input) {
   var operands = new Stack();
   var operators = new Stack();
   
-  while (i = 0; i <= Input.length(); i++) { // goes through stack length
+  while (var i=0; i <= Input.length(); i++) { // goes through stack length
   
     if ( Input[i] == 1 || Input[i] == 2 || Input[i] == 3 || Input[i] == 4 || Input[i] == 5 || Input[i] == 6 || Input[i] == 7 || Input[i] == 8 || Input[i] == 9 || Input[i] == 0) { // if a number
       operands.push(Input); // pushes input into the operands stack
@@ -38,6 +38,8 @@ function convert(Input) {
   
   operands.forEach(console.log(currentValue));  // test to see if in right order
   operators.forEach(console.log(currentValue)); // test to see if in right order
+  
+  //from two stacks to output stack//
   
   return output; // returns output stack
   
