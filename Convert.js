@@ -36,16 +36,8 @@ function convert(Input) {
     
   }// end of while loop
   
-  operands.forEach(console.log(currentValue));
-  operators.forEach(console.log(currentValue));
-  
-  for (var i=0, i<=operators.length, i++) { // pushes all operators onto output stack
-    output.push(operators[i]);
-  }// end of for loop
-  
-  for (var i=0, i<=operands.length, i++) { // pushes all operands onto output stack
-    output.push(operands[i]);
-  }// end of for loop
+  operands.forEach(console.log(currentValue));  // test to see if in right order
+  operators.forEach(console.log(currentValue)); // test to see if in right order
   
   return output; // returns output stack
   
